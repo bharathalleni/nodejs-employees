@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "1d288351-8f29-403d-863e-51125d5d4ec6",
+		"name": "MINFY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://a9a818vcd8.execute-api.ap-south-1.amazonaws.com/dev/marks?empId=1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "35aa802c-305b-4f3f-a1fb-40259864e378",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"operation\":\"Add\",\"input1\":\"11\",\"input2\":\"2\"}"
+				},
+				"url": {
+					"raw": "https://a9a818vcd8.execute-api.ap-south-1.amazonaws.com/dev/marks?empId=2",
+					"protocol": "https",
+					"host": [
+						"a9a818vcd8",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"marks"
+					],
+					"query": [
+						{
+							"key": "empId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://a9a818vcd8.execute-api.ap-south-1.amazonaws.com/dev/marks?empId=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://a9a818vcd8.execute-api.ap-south-1.amazonaws.com/dev/marks?empId=1",
+					"protocol": "https",
+					"host": [
+						"a9a818vcd8",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"marks"
+					],
+					"query": [
+						{
+							"key": "empId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://a9a818vcd8.execute-api.ap-south-1.amazonaws.com/dev/marks?empId=2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "de66bacb-ebb7-4d20-915a-9799db679ca0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"EMP_ID\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"operation\":\"Add\",\"input1\":\"11\",\"input2\":\"2\"}"
+				},
+				"url": {
+					"raw": "https://a9a818vcd8.execute-api.ap-south-1.amazonaws.com/dev/marks?empId=2",
+					"protocol": "https",
+					"host": [
+						"a9a818vcd8",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"marks"
+					],
+					"query": [
+						{
+							"key": "empId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
