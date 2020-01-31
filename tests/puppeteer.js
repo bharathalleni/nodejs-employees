@@ -10,8 +10,13 @@ const puppeteer = require('puppeteer');
   );
 
   const page = await browser.newPage();
+
+  page.addStyleTag(
+    {'content': '@page { size: A4 landscape; }'}
+    )
+
   await page.goto('https://facebook.com', {waitUntil: 'networkidle2'});
-  await page.pdf({path: 'hn.pdf', format: 'A4'});
+  await page.pdf({path: 'hn.pdf', format: 'A4',});
 
   await browser.close();
 })();
